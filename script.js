@@ -12,10 +12,20 @@ let guesses = 0;
 
 const randomWord = () => {
     word = words[Math.floor(Math.random() * words.length)];
-    alert(word);
 }
 
+const getButtons = () => {
+    let buttons = "abcdefghijklmnopqrstuvwxyz".split('').map(letter =>
+        `<button class="btn" id=`+ letter +` onClick="handleGuess('`+ letter +`')">
+        `+ letter +`
+        </button> 
+        
+        `).join('');
+
+        document.querySelector('.wrapper').innerHTML = buttons;
+}
 randomWord();
+getButtons();
 // 1. Pick a random word
     // While word has not been guessed {
     //     (Get guess from player)
