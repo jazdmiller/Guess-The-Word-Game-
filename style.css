@@ -4,3 +4,19 @@
     width: 100vh;
     margin: 0 auto;
 }
+
+h1 {
+    text-align: center;
+}
+
+.guesses {
+    float: right;
+}
+
+.hangmanPic {
+    text-align: center;
+}
+
+.answer {
+    text-align: center;
+}

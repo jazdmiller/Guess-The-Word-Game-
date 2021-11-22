@@ -1,8 +1,10 @@
 /// Global Variables ///
-const words = ['The Godfather', 'Inception', 'Fight Club', 'Pulp Fiction', 'Forrest Gump'];
-let answerArray = [];
-let wrongGuess = 8;
-let guesses = 0;
+const words = ['the godfather', 'inception', 'fight club', 'pulp fiction', 'forrest gump'];
+let answerArray = '';
+let wrongGuess = 6;
+let guesses = [];
+let gameStatus = null;
+let mistakes = 0;
 
 
 
@@ -11,12 +13,12 @@ let guesses = 0;
 /// Game functions + logic ///
 
 const randomWord = () => {
-    word = words[Math.floor(Math.random() * words.length)];
+    answerArray = words[Math.floor(Math.random() * words.length)];
 }
 
 const getButtons = () => {
     let buttons = "abcdefghijklmnopqrstuvwxyz".split('').map(letter =>
-        `<button class="btn" id=`+ letter +` onClick="handleGuess('`+ letter +`')">
+        `<button class="btn btn-lg btn-primary m-2" id=`+ letter +` onClick="handleGuess('`+ letter +`')">
         `+ letter +`
         </button> 
         
@@ -24,8 +26,37 @@ const getButtons = () => {
 
         document.querySelector('.wrapper').innerHTML = buttons;
 }
+
+const handleGuess = (letterGuess) => {
+    guesses.indexOf(letterGuess) === -1 ? guesses.push(letterGuess) : null;
+    document.getElementById(letterGuess).setAttribute('disabled', true);
+
+    if (answerArray.indexOf(letterGuess) >= 0) {
+        guessWord();
+        checkWin();
+    } else if (answerArray.indexOf(letterGuess) === -1) {
+        mistakes++;
+        addMistakes();
+        checkLost();
+    }
+}
+
+const guessWord = () => {
+    gameStatus = answerArray.split('').map(letter => (guesses.indexOf(letter) >= 0 ? letter : ' _ ')).join('');
+    
+    document.querySelector(".answer").innerHTML = gameStatus;
+}
+
+const addMistakes = () => {
+    document.getElementById('mistakes').innerHTML = mistakes;
+}
+
+document.getElementById('wrongGuess').innerHTML = wrongGuess;
+
 randomWord();
 getButtons();
+guessWord();
+handleGuess();
 // 1. Pick a random word
     // While word has not been guessed {
     //     (Get guess from player)
