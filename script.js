@@ -49,7 +49,7 @@ const checkWin = () => {
 
 const checkLost = () => {
     if (mistakes === wrongGuess) {
-        document.querySelector('.wrapper').innerHTML = 'Sorry! You lose!';
+        document.querySelector('.wrapper').innerHTML = `Sorry, you lose! The movie is: ${answerArray}`;
     }
 }
 
@@ -63,6 +63,16 @@ const addMistakes = () => {
     document.getElementById('mistakes').innerHTML = mistakes;
 }
 
+const reset = () => {
+    mistakes = 0;
+    guesses = [];
+    document.querySelector('.hangmanPic').src = "./images/0.jpg";
+
+    randomWord();
+    guessWord();
+    addMistakes();
+    getButtons();
+}
 document.getElementById('wrongGuess').innerHTML = wrongGuess;
 
 randomWord();
