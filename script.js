@@ -41,6 +41,18 @@ const handleGuess = (letterGuess) => {
     }
 }
 
+const checkWin = () => {
+    if (gameStatus === answerArray) {
+        document.querySelector('.wrapper').innerHTML = 'Congratulations! You won!';
+    }
+}
+
+const checkLost = () => {
+    if (mistakes === wrongGuess) {
+        document.querySelector('.wrapper').innerHTML = 'Sorry! You lose!';
+    }
+}
+
 const guessWord = () => {
     gameStatus = answerArray.split('').map(letter => (guesses.indexOf(letter) >= 0 ? letter : ' _ ')).join('');
     
