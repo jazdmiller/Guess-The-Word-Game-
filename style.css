@@ -1,9 +1,18 @@
+body {
+    background-color: #8ecae6;
+    background-image: url(./images/flowers/sun.png);
+    background-repeat: no-repeat;
+    background-size: 40vh;
+    background-position: top right;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     width: 30vh;
     margin-left: 10px;
     margin-top: 10vh;
+    
 }
 
 .btn {
@@ -12,10 +21,15 @@
    padding: -10px;
    width: 30px;
    height: 30px;
+   font-family: "Analogue";
+}
+.btn:hover {
+    background-color: #F4BC33;
 }
 
 h1 {
     text-align: center;
+    font-family: 'MonteCarlo';
 }
 
 .score {
@@ -27,30 +41,34 @@ h1 {
     padding: 50px;
     margin-top: 20vh;
     margin-left: 30vh;
-    background-color: gray;
+    background-color: rgba(241, 250, 238, .3);
 }
 
-/* .guesses {
-    float: right;
-    margin-right: 100px;;
-} */
+.guesses {
+    font-family: "Analogue";
+    font-size: 2.5vh;
+}
 
 .hangmanPic {
     display: block;
-    width: 50vh;
+    width: 60vh;
     float: right;
-    margin-top: 25vh;
+    margin-top: 15vh;
     margin-right: 30vh;
 }
 
 .answer {
     text-align: center;
+    margin-top: 10vh;
+    margin-bottom: -30px;
 
 }
 
 .reset {
     margin-top: 30px;
     border-radius: 25%;
+    font-family: "Analogue";
+    font-size: 2.5vh;
 }
 
 /* @media only screen and (min-width: 992px){

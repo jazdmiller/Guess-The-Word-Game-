@@ -1,5 +1,5 @@
 /// Global Variables ///
-const words = ['the godfather', 'inception', 'fight club', 'pulp fiction', 'forrest gump'];
+const words = ['rose', 'sunflower', 'orchid', 'hibiscus', 'tulip'];
 let answerArray = '';
 let wrongGuess = 6;
 let guesses = [];
@@ -59,7 +59,7 @@ const checkWin = () => {
 // Check to see if player lost
 const checkLost = () => {
     if (mistakes === wrongGuess) {
-        document.querySelector('.wrapper').innerHTML = `Sorry, you lose! The movie is: ${answerArray}`;
+        document.querySelector('.wrapper').innerHTML = `Sorry, you lose! The flower is: ${answerArray}`;
     }
 }
 
