@@ -1,25 +1,71 @@
 .wrapper {
     display: grid;
-    grid-template-columns: repeat(13, 1fr);
-    width: 100vh;
-    margin: 0 auto;
+    grid-template-columns: repeat(5, 1fr);
+    width: 30vh;
+    margin-left: 10px;
+    margin-top: 10vh;
+}
+
+.btn {
+   border-radius: 50%; 
+   margin: 2px;
+   padding: -10px;
+   width: 30px;
+   height: 30px;
 }
 
 h1 {
     text-align: center;
 }
 
-.guesses {
-    float: right;
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    float: left;
+    border-radius: 25%;
+    padding: 50px;
+    margin-top: 20vh;
+    margin-left: 30vh;
+    background-color: gray;
 }
+
+/* .guesses {
+    float: right;
+    margin-right: 100px;;
+} */
 
 .hangmanPic {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
+    width: 50vh;
+    float: right;
+    margin-top: 25vh;
+    margin-right: 30vh;
 }
 
 .answer {
     text-align: center;
+
 }
+
+.reset {
+    margin-top: 30px;
+    border-radius: 25%;
+}
+
+/* @media only screen and (min-width: 992px){
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 30vh;
+        height: 20vh;
+        margin-top: 100px;
+        margin-bottom: 60px;
+        margin-left: 20px;;
+    }
+    .hangmanPic {
+        display: ;
+        width: 40vh;
+        float: right;
+    }
+} */

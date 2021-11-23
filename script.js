@@ -46,7 +46,7 @@ const handleGuess = (letterGuess) => {
 
 // Add items to hangman when user guesses wrong letter
 const addPic = () => {
-    document.querySelector('.hangmanPic').src = './images/' + mistakes + '.jpg';
+    document.querySelector('.hangmanPic').src = './images/flowers/' + mistakes + '.jpg';
 }
 
 // Check to see if there is a winner
@@ -79,7 +79,7 @@ const addMistakes = () => {
 const reset = () => {
     mistakes = 0;
     guesses = [];
-    document.querySelector('.hangmanPic').src = "./images/0.jpg";
+    document.querySelector('.hangmanPic').src = "./images/flowers/1.jpg";
 
     randomWord();
     guessWord();

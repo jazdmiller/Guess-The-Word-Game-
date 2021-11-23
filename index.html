@@ -10,11 +10,15 @@
 <body>
     <h1>Hangman: Movie Edition</h1>
     <p class="answer">Word to be guessed goes here</p>
-    <div class="guesses">Wrong guesses: <span id="mistakes">0</span> of <span id="wrongGuess"></span></div>
-    <img src="./images/0.jpg" alt="hangman picture" class="hangmanPic">
-    <div class="wrapper">
+    <div class="score">
+        <div class="guesses">Wrong guesses: <span id="mistakes">0</span> of <span id="wrongGuess"></span></div>
+        <button class="reset" onClick="reset()">Reset Game</button>
+        <div class="wrapper"></div>
     </div>
-    <button class="reset" onClick="reset()">Reset Game</button>
+    
+    <img src="./images/flowers/1.jpg" alt="hangman picture" class="hangmanPic">
+    
+  
     <script src="script.js"></script>
 </body>
 </html>
